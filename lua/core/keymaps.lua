@@ -11,47 +11,26 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Change leader to a comma
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 -----------------------------------------------------------
 -- Neovim shortcuts
 -----------------------------------------------------------
 
--- Disable arrow keys
-map('', '<up>', '<nop>')
-map('', '<down>', '<nop>')
-map('', '<left>', '<nop>')
-map('', '<right>', '<nop>')
-
--- Map Esc to kk
-map('i', 'kk', '<Esc>')
-
--- Clear search highlighting with <leader> and c
-map('n', '<leader>c', ':nohl<CR>')
-
--- Toggle auto-indenting for code paste
-map('n', '<F2>', ':set invpaste paste?<CR>')
-vim.opt.pastetoggle = '<F2>'
-
--- Change split orientation
-map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
-map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
-
--- Move around splits using Ctrl + {h,j,k,l}
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
--- Reload configuration without restart nvim
+map('n', 'S', ':w<CR>')
+map('n', 'Q', ':q<CR>')
+map('n', 'Y', '<Esc>Vy')
+map('i', '<S-Tab>', '<Esc>yiWi<<Esc>Emma></<C-r>"><Esc>`ma')
+
+
+map('n', '<leader>cp', ':lcd %:p:h<CR> :let @+=expand("%:~")<CR>')
+map('n', '<leader>no', ':vs ~/note<CR>')
 map('n', '<leader>r', ':so %<CR>')
-
--- Fast saving with <leader> and s
-map('n', '<leader>s', ':w<CR>')
-map('i', '<leader>s', '<C-c>:w<CR>')
-
--- Close all windows and exit from Neovim with <leader> and q
-map('n', '<leader>q', ':qa!<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
@@ -61,10 +40,9 @@ map('n', '<leader>q', ':qa!<CR>')
 map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
--- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+map('n', '<C-f>', ':CtrlSF ')
+map('n', '<C-p>', ':call fzf#run(fzf#wrap({"source": "git ls-files", "options": "--reverse"}))<CR>')
 
--- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+-- NvimTree
+map('n', '<C-n>', ':NERDTreeToggle<CR>')
+map('n', '<C-b>', ':NERDTreeFind<CR>')

@@ -43,15 +43,28 @@ end
 -- Install plugins
 return packer.startup(function(use)
   -- Add you plugins here:
+
   use 'wbthomason/packer.nvim' -- packer can manage itself
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-abolish'
+  use 'tpope/vim-dispatch'
 
-  -- File explorer
-  use 'kyazdani42/nvim-tree.lua'
+  use 'neovim/nvim-lspconfig'
+  use 'junegunn/fzf'
+  use 'preservim/nerdtree'
 
-  -- Indent line
-  use 'lukas-reineke/indent-blankline.nvim'
+  use 'AndrewRadev/splitjoin.vim'
+  use 'bronson/vim-visual-star-search'
+  use 'chemzqm/wxapp.vim'
+  use 'navarasu/onedark.nvim'
 
-  -- Autopair
+
+  use 'dyng/ctrlsf.vim'
+  vim.api.nvim_set_var('ctrlsf_default_view_mode', 'compact')
+  vim.api.nvim_set_var('ctrlsf_populate_qflist', 1)
+
   use {
     'windwp/nvim-autopairs',
     config = function()
@@ -59,23 +72,6 @@ return packer.startup(function(use)
     end
   }
 
-  -- Icons
-  use 'kyazdani42/nvim-web-devicons'
-
-  -- Tag viewer
-  use 'preservim/tagbar'
-
-  use 'preservim/nerdtree'
-
-  -- Color schemes
-  use 'navarasu/onedark.nvim'
-  use 'tanvirtin/monokai.nvim'
-  use { 'rose-pine/neovim', as = 'rose-pine' }
-
-  -- LSP
-  use 'neovim/nvim-lspconfig'
-
-  -- Autocomplete
   use {
     'hrsh7th/nvim-cmp',
     requires = {
@@ -85,27 +81,6 @@ return packer.startup(function(use)
       'hrsh7th/cmp-buffer',
       'saadparwaiz1/cmp_luasnip',
     },
-  }
-
-  -- Statusline
-  use {
-    'feline-nvim/feline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
-
-  -- git labels
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('gitsigns').setup()
-    end
-  }
-
-  -- Dashboard (start screen)
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
