@@ -14,6 +14,7 @@ local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 -----------------------------------------------------------
 opt.mouse = 'a'                       -- Enable mouse support
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
+opt.swapfile = false                  -- Don't use swapfile
 opt.undodir = '/tmp/nvim_temp'
 opt.undofile = true
 
