@@ -30,10 +30,14 @@ map('n', 'H', ':tabprevious<CR>')
 map('n', 'Y', '<Esc>Vy')
 map('i', '<S-Tab>', '<Esc>yiWi<<Esc>Emma></<C-r>"><Esc>`ma')
 
-
-map('n', '<leader>cp', ':lcd %:p:h<CR> :let @+=expand("%:~")<CR>')
+map('n', '<leader>l', ':vs<CR>')
+map('n', '<leader>y', '"+y')
+map('v', '<leader>y', '"+y')
+map('n', '<leader>,', ':vs $MYVIMRC<CR>')
+map('n', '<leader>so', ':so $MYVIMRC<CR>')
 map('n', '<leader>no', ':vs ~/note<CR>')
-map('n', '<leader>r', ':so %<CR>')
+map('n', '<leader>cp', ':lcd %:p:h<CR> :let @+=expand("%:~")<CR>')
+
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
