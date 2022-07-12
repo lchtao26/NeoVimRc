@@ -24,6 +24,9 @@ map('n', '<C-l>', '<C-w>l')
 
 map('n', 'S', ':w<CR>')
 map('n', 'Q', ':q<CR>')
+map('n', 'L', ':tabnext<CR>')
+map('n', 'H', ':tabprevious<CR>')
+
 map('n', 'Y', '<Esc>Vy')
 map('i', '<S-Tab>', '<Esc>yiWi<<Esc>Emma></<C-r>"><Esc>`ma')
 
