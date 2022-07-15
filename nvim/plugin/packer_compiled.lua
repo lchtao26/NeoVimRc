@@ -155,6 +155,11 @@ _G.packer_plugins = {
     path = "/Users/nocode/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-matchup"] = {
+    loaded = true,
+    path = "/Users/nocode/.local/share/nvim/site/pack/packer/start/vim-matchup",
+    url = "https://github.com/andymass/vim-matchup"
+  },
   ["vim-repeat"] = {
     loaded = true,
     path = "/Users/nocode/.local/share/nvim/site/pack/packer/start/vim-repeat",

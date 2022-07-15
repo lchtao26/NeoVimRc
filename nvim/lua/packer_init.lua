@@ -59,6 +59,8 @@ return packer.startup(function(use)
   use 'bronson/vim-visual-star-search'
   use 'chemzqm/wxapp.vim'
   use 'navarasu/onedark.nvim'
+  use 'andymass/vim-matchup'
+  vim.api.nvim_set_var('matchup_matchparen_enabled', 0)
 
 
   use 'dyng/ctrlsf.vim'
